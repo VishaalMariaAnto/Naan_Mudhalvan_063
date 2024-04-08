@@ -1,0 +1,49 @@
+{% extends 'musicbeats/basic.htm' %}
+{% block title %}Sign Up{% endblock %}
+
+{% block body %}
+<div class="container my-4">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card" style="background-color: #F8F9FA; border-radius: 15px; box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);">
+                <div class="card-header" style="background-color: #e78a8a; border-radius: 15px 15px 0 0;">
+                    <h3 class="text-center text-white">Sign Up</h3>
+                </div>
+                <div class="card-body">
+                    <form method="POST" action="/musicbeats/signup">{% csrf_token %}
+                        <div class="form-group">
+                            <label for="email" style="color: #e78a8a;">Email address</label>
+                            <input type="email" class="form-control" id="email" placeholder="name@example.com" name="email">
+                        </div>
+                        <div class="form-group">
+                            <label for="username" style="color: #e78a8a;">Username</label>
+                            <input type="text" class="form-control" id="username" name="username">
+                        </div>
+                        <div class="form-row">
+                            <div class="col">
+                                <label for="firstname" style="color: #e78a8a;">First Name</label>
+                                <input type="text" class="form-control" id="firstname" name="firstname">
+                            </div>
+                            <div class="col">
+                                <label for="lastname" style="color: #e78a8a;">Last Name</label>
+                                <input type="text" class="form-control" id="lastname" name="lastname">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="password" style="color: #e78a8a;">Password</label>
+                            <input type="password" class="form-control" id="password" name="pass1">
+                        </div>
+                        <div class="form-group">
+                            <label for="password_confirm" style="color: #e78a8a;">Confirm Password</label>
+                            <input type="password" class="form-control" id="password_confirm" name="pass2">
+                        </div>
+                        <div class="text-center">
+                            <button type="submit" class="btn btn-primary" style="background-color: #e78a8a; border-color: #17a2b8;">Sign Up</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
